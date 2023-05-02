@@ -8,6 +8,7 @@
 "project\usart.o"
 "project\stm32f1xx_it.o"
 "project\stm32f1xx_hal_msp.o"
+"project\oled.o"
 "project\stm32f1xx_hal_gpio_ex.o"
 "project\stm32f1xx_hal_adc.o"
 "project\stm32f1xx_hal_adc_ex.o"
