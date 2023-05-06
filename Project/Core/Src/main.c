@@ -27,6 +27,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "oled.h"
 #include "mlx90614.h"
 /* USER CODE END Includes */
 
@@ -72,6 +73,18 @@ int main(void)
 	uint8_t x = 0;
 	uint8_t y = 0;
 	float temperatureValue = 0;
+	uint8_t temperatureIntegerValue = 0;
+	uint8_t temperatureDecimalValue = 0;
+	RTC_DateTypeDef sdatestructure;
+	RTC_TimeTypeDef stimestructure;
+	uint8_t yearValue = 0;
+	uint8_t monthValue = 0;
+	uint8_t dateValue = 0;
+	uint8_t hourValue = 0;
+	uint8_t minuteValue = 0;
+	uint8_t secondValue = 0;
+	uint8_t i = 0;
+	uint8_t j = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -114,14 +127,54 @@ int main(void)
 //	OLED_ShowChinese(x + 16 * 2, y + 2 * 3, 10);
 //	OLED_ShowChinese(x + 16 * 3, y + 2 * 3, 11);
 //	OLED_ShowChar(x + 16 * 4 + 8 * 0, y + 2 * 3, ':', 16);
+printf("Hello\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		yearValue = sdatestructure.Year + 2000;
+		monthValue = sdatestructure.Month;
+		dateValue = sdatestructure.Date;
+		hourValue = stimestructure.Hours;
+		minuteValue = stimestructure.Minutes;
+		secondValue = stimestructure.Seconds;
+		
 		temperatureValue = MLX90614_GetTemperature();
-		printf("%.1f C\n", temperatureValue);
+		temperatureIntegerValue = (int)temperatureValue;
+		temperatureDecimalValue = 10 * (temperatureValue - (int)temperatureValue);
+		printf("%.1f\n", temperatureValue);
+//		OLED_ShowNum(x + 16 * 4 + 8 * 1, y + 2 * 2, temperatureIntegerValue, 2, 16);
+//		OLED_ShowChar(x + 16 * 4 + 8 * 3, y + 2 * 2, '.', 16);
+//		OLED_ShowNum(x + 16 * 4 + 8 * 4, y + 2 * 2, temperatureDecimalValue, 1, 16);
+//		OLED_ShowChar(x + 16 * 4 + 8 * 5, y + 2 * 2, 'C', 16);
+		
+		if (HAL_GPIO_ReadPin(Key_1_GPIO_Port, Key_1_Pin) == GPIO_PIN_RESET)
+		{
+			HAL_Delay(50);
+			printf("Power: ON!\n");
+			i = 1;
+		}
+		else if (HAL_GPIO_ReadPin(Key_2_GPIO_Port, Key_2_Pin) == GPIO_PIN_RESET)
+		{
+			HAL_Delay(50);
+			printf("Power: OFF!\n");
+			i = 2;
+		}
+//		switch(i)
+//		{
+//			case 1:
+//				HAL_PWR_EnableSleepOnExit();
+//			break;
+//			case 2:
+//				HAL_SuspendTick();
+//				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+//			break;
+//			default:
+//				HAL_PWR_EnableSleepOnExit();
+//			break;
+//		}
 		
 		HAL_Delay(1000);
     /* USER CODE END WHILE */

@@ -36,4 +36,4 @@ project/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Core\Inc\adc.h ..\Core\Inc\i2c.h ..\Core\Inc\rtc.h \
   ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
   D:\ProgramFiles\KeilMDK\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\Core\Inc\gpio.h ..\Core\Inc\mlx90614.h
+  ..\Core\Inc\gpio.h ..\Core\Inc\oled.h ..\Core\Inc\mlx90614.h
