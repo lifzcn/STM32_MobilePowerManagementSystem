@@ -1,6 +1,6 @@
 Configuration	Project
 STM32CubeMX 	6.8.0
-Date	05/05/2023
+Date	05/06/2023
 MCU	STM32F103C8Tx
 
 
@@ -15,6 +15,9 @@ RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PD0-OSC_IN
 RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PD1-OSC_OUT
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC14-OSC32_IN
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT
+RTC	Activate Clock Source	RTC_VS_RTC_Activate	VP_RTC_VS_RTC_Activate
+RTC	Activate Calendar	RTC_VS_RTC_Calendar	VP_RTC_VS_RTC_Calendar
+RTC	No RTC Output	RTC_No_RTC_Output	VP_RTC_No_RTC_Output
 SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
 SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
@@ -48,6 +51,9 @@ RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PD0-OSC_IN
 RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PD1-OSC_OUT
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC14-OSC32_IN
 RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT
+RTC	Activate Clock Source	RTC_VS_RTC_Activate	VP_RTC_VS_RTC_Activate
+RTC	Activate Calendar	RTC_VS_RTC_Calendar	VP_RTC_VS_RTC_Calendar
+RTC	No RTC Output	RTC_No_RTC_Output	VP_RTC_No_RTC_Output
 SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
 SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
