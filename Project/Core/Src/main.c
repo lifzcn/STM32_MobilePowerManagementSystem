@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "oled.h"
+#include "mlx90614.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,7 +68,9 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	uint8_t x = 0;
+	uint8_t y = 0;
+	float temperatureValue = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -93,14 +95,33 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C1_Init();
   MX_TIM1_Init();
+  MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-
+//	OLED_Init();
+//	OLED_Clear();
+//	OLED_ShowChinese(x + 32 + 16 * 0, y + 2 * 0, 0);
+//	OLED_ShowChinese(x + 32 + 16 * 1, y + 2 * 0, 1);
+//	OLED_ShowChinese(x + 32 + 16 * 2, y + 2 * 0, 2);
+//	OLED_ShowChinese(x + 32 + 16 * 3, y + 2 * 0, 3);
+//	OLED_ShowChinese(x + 32 + 16 * 0, y + 2 * 1, 4);
+//	OLED_ShowChinese(x + 32 + 16 * 1, y + 2 * 1, 5);
+//	OLED_ShowChinese(x + 32 + 16 * 2, y + 2 * 1, 6);
+//	OLED_ShowChinese(x + 32 + 16 * 3, y + 2 * 1, 7);
+//	OLED_ShowChinese(x + 16 * 0, y + 2 * 3, 8);
+//	OLED_ShowChinese(x + 16 * 1, y + 2 * 3, 9);
+//	OLED_ShowChinese(x + 16 * 2, y + 2 * 3, 10);
+//	OLED_ShowChinese(x + 16 * 3, y + 2 * 3, 11);
+//	OLED_ShowChar(x + 16 * 4 + 8 * 0, y + 2 * 3, ':', 16);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		temperatureValue = MLX90614_GetTemperature();
+		printf("%.1f C\n", temperatureValue);
+		
+		HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

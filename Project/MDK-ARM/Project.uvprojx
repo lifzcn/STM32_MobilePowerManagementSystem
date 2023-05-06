@@ -395,6 +395,11 @@
           <GroupName>Application/User/Core</GroupName>
           <Files>
             <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\oled.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/main.c</FilePath>
@@ -588,9 +593,9 @@
               <FilePath>../Core/Src/stm32f1xx_hal_msp.c</FilePath>
             </File>
             <File>
-              <FileName>oled.c</FileName>
+              <FileName>mlx90614.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\oled.c</FilePath>
+              <FilePath>..\Core\Src\mlx90614.c</FilePath>
             </File>
           </Files>
         </Group>

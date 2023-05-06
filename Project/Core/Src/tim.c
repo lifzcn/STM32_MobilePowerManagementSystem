@@ -101,5 +101,16 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 }
 
 /* USER CODE BEGIN 1 */
-
+void HAL_Delay_us(uint16_t us)
+{
+	uint16_t differ = 0xffff-us-5;				
+	__HAL_TIM_SET_COUNTER(&htim1,differ);	
+	HAL_TIM_Base_Start(&htim1);		
+	
+	while(differ < 0xffff-5)
+	{	
+		differ = __HAL_TIM_GET_COUNTER(&htim1);		
+	}
+	HAL_TIM_Base_Stop(&htim1);
+}
 /* USER CODE END 1 */

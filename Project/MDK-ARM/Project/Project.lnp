@@ -1,5 +1,6 @@
 --cpu Cortex-M3
 "project\startup_stm32f103xb.o"
+"project\oled.o"
 "project\main.o"
 "project\gpio.o"
 "project\adc.o"
@@ -8,7 +9,7 @@
 "project\usart.o"
 "project\stm32f1xx_it.o"
 "project\stm32f1xx_hal_msp.o"
-"project\oled.o"
+"project\mlx90614.o"
 "project\stm32f1xx_hal_gpio_ex.o"
 "project\stm32f1xx_hal_adc.o"
 "project\stm32f1xx_hal_adc_ex.o"

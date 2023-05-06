@@ -41,7 +41,7 @@ extern TIM_HandleTypeDef htim1;
 void MX_TIM1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void HAL_Delay_us(uint16_t us);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
