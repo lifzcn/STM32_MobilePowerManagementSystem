@@ -180,7 +180,6 @@ int main(void)
 		switch(j)
 		{
 			case 0:
-			  OLED_Init();
 				OLED_Clear();
 			break;
 			case 1:
@@ -261,7 +260,7 @@ int main(void)
 			break;
 		}
 		
-		HAL_Delay(500);
+		HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -325,7 +324,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		noInputDelayTimeCounter++;
 		if (noInputDelayTimeCounter == 5000)
 		{
-			OLED_Init();
 			OLED_Clear();
 		}
 	}
@@ -334,7 +332,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		lowVoltageDelayTimeCounter++;
 		if (lowVoltageDelayTimeCounter == 4 * 5000)
 		{
-			OLED_Init();
 			OLED_Clear();
 		}
 	}
