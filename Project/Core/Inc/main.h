@@ -71,6 +71,12 @@ void Error_Handler(void);
 #define LED_IO_GPIO_Port GPIOA
 #define LED_GND_Pin GPIO_PIN_12
 #define LED_GND_GPIO_Port GPIOA
+#define Relay_IN_Pin GPIO_PIN_3
+#define Relay_IN_GPIO_Port GPIOB
+#define Relay_GND_Pin GPIO_PIN_4
+#define Relay_GND_GPIO_Port GPIOB
+#define Relay_VCC_Pin GPIO_PIN_5
+#define Relay_VCC_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

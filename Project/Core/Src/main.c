@@ -246,6 +246,7 @@ int main(void)
 				if (voltageValue < standardVoltage)
 				{
 					HAL_TIM_PeriodElapsedCallback(&htim2);
+					HAL_GPIO_WritePin(Relay_IN_GPIO_Port, Relay_IN_Pin, GPIO_PIN_SET);
 				}
 				
 				if (temperatureValue > standardTemperature)
